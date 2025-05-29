@@ -8,4 +8,5 @@ RUN CGO_ENABLED=0 GOOS=linux go build -ldflags "-X 'github.com/monakhovm/gcloud-
 FROM scratch
 COPY --from=builder /app/app .
 EXPOSE 8080
+LABEL "org.opencontainers.image.source"="https://github.com/monakhovm/gcloud-version"
 ENTRYPOINT ["./app"]
